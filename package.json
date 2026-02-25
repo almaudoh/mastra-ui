@@ -2,21 +2,31 @@
   "name": "mastra-ai-agent",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "eval:summary": "npx -y node@23 --env-file=../.env mastra/evals/runSummaryEval.ts",
+    "eval:summary:ci": "npx -y node@23 --env-file=../.env mastra/evals/runSummaryEval.ts --json --compact"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.33",
     "@ai-sdk/react": "^3.0.92",
     "@mastra/ai-sdk": "^1.0.4",
     "@mastra/core": "^1.4.0",
+    "@mastra/evals": "^1.1.2",
+    "@mastra/libsql": "^1.6.1",
+    "@mastra/loggers": "^1.0.2",
+    "@mastra/memory": "^1.5.1",
+    "@mastra/rag": "^2.1.1",
     "@mastra/server": "^1.4.0",
     "ai": "^6.0.90",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
