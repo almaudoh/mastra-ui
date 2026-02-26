@@ -1,8 +1,11 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { config } from 'dotenv';
 import { summarizerAgent } from '../agents/summarizer.ts';
 import { runEvals } from './summaryEval.ts';
 import { fetchPageTool } from '../tools/fetchPage.ts';
+
+config();
 
 type CliOptions = {
   url?: string;

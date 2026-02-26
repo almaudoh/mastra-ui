@@ -4,9 +4,10 @@ import { Memory } from '@mastra/memory';
 import { fetchPageTool } from '../tools/fetchPage.ts';
 import { ragQueryTool } from '../tools/ragQuery.ts';
 import { saveSummaryTool } from '../tools/saveSummary.ts';
+import { getDbPath } from '../utils.ts';
 
 const memory = new Memory({
-	storage: new LibSQLStore({ id: 'memory-store', url: 'file:./workspace/memory.db' }),
+	storage: new LibSQLStore({ id: 'memory-store', url: `file:${getDbPath()}/memory.db` }),
 	options: {
 		lastMessages: 20,
 		semanticRecall: false,

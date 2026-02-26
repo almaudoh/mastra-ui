@@ -2,10 +2,11 @@ import { embedMany } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { LibSQLVector } from '@mastra/libsql';
 import { MDocument } from '@mastra/rag';
+import { getDbPath } from '../utils.ts';
 
 const vectorStore = new LibSQLVector({
   id: 'local-vectors',
-  url: 'file:./workspace/vectors.db',
+  url: `file:${getDbPath()}/vectors.db`,
 });
 
 export async function ingestDocument(text: string, metadata: Record<string, string>) {

@@ -1,4 +1,4 @@
-import { mastraServer as mastra } from "@/mastra/server";
+import { mastraServer as mastra } from "@/src/mastra";
 import { createUIMessageStreamResponse } from 'ai';
 import { handleChatStream } from '@mastra/ai-sdk';
 

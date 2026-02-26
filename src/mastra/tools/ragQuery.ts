@@ -1,10 +1,11 @@
 import { openai } from '@ai-sdk/openai';
 import { LibSQLVector } from '@mastra/libsql';
 import { createVectorQueryTool } from '@mastra/rag';
+import { getDbPath } from '../utils.ts';
 
 const vectorStore = new LibSQLVector({
   id: 'local-vectors',
-  url: 'file:./workspace/vectors.db',
+  url: `file:${getDbPath()}/vectors.db`,
 });
 
 export const ragQueryTool = createVectorQueryTool({
